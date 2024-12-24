@@ -81,7 +81,7 @@ class FourierUnit_modified(nn.Module):
                                     locMap_shift),dim = 1)                        
 
         ffted = self.conv_layer_down55_shift( cat_img_mask_freq1 )
-        ffted = torch.fft.fftshift(ffted, dim = -2)
+        ffted = torch.fft.ifftshift(ffted, dim = -2)
 
 
         lambda_base = torch.sigmoid(self.lambda_base)
